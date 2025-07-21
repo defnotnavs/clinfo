@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Client Information Form</title>
+</head>
+<body>
+    <!-- Logo and Images Section -->
+    <div class="image-container">
+        <img src="BSIS.png" alt="Logo" class="logo">
+   
+    </div>
+
+    <div class="container">
+        <h1>Client Information Form</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 555-5555" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Project Details</legend>
+                <label for="project-name">Project Title:</label>
+                <input type="text" id="project-name" name="project-name" placeholder="Project X" required>
+
+                <label for="project-description">Project Overview:</label>
+                <textarea id="project-description" name="project-description" placeholder="Brief description of the project..." required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>File & Content Provision</legend>
+                <label for="file-upload">Upload Relevant Files:</label>
+                <input type="file" id="file-upload" name="file-upload" multiple>
+            </fieldset>
+
+            <fieldset>
+                <legend>Approvals & Follow-ups</legend>
+                <label for="approval">Approval Status:</label>
+                <select id="approval" name="approval">
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Signature</legend>
+                <label for="signature">Signature (optional):</label>
+                <input type="text" id="signature" name="signature" placeholder="Your signature here">
+            </fieldset>
+
+            <button type="submit">Submit Form</button>
+        </form>
+        <div class="confirmation-message" id="confirmation" style="display:none;">
+            <p>Thank you for your submission!</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const confirmationMessage = document.getElementById('confirmation');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            confirmationMessage.style.display = 'block';
+            form.reset();
+        });
+    </script>
+</body>
+</html>
